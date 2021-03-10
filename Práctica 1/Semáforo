@@ -1,0 +1,76 @@
+//Leds semáforo 1
+int lv1=13;
+int la1=12;
+int lr1=8;
+
+//Leds semáforo 2
+int lv2=7;
+int la2=4;
+int lr2=2;
+
+void setup()
+{
+  pinMode(lv1, OUTPUT);
+  pinMode(la1, OUTPUT);
+  pinMode(lr1, OUTPUT);
+  pinMode(lv2, OUTPUT);
+  pinMode(la2, OUTPUT);
+  pinMode(lr2, OUTPUT);
+  
+}
+
+void loop()
+{
+  //1) 5 segundos rojo / amarillo verde
+  //2) 5 segundos verde / rojo amarillo
+  
+  digitalWrite(lr1, HIGH);
+  digitalWrite(lv1, LOW);
+  digitalWrite(la1, LOW);
+  
+  digitalWrite(lv2, HIGH);
+  digitalWrite(la2, LOW);
+  digitalWrite(lr2, LOW);
+  
+  delay(5000); // Wait for 5 seconds
+  
+  //1) 1 segundo rojo / amarillo verde
+  //2) 1 segundo amarillo / rojo verde
+  
+  digitalWrite(lr1, HIGH);
+  digitalWrite(lv1, LOW);
+  digitalWrite(la1, LOW);
+  
+  digitalWrite(la2, HIGH);
+  digitalWrite(lv2, LOW);
+  digitalWrite(lr2, LOW);
+  
+  delay(1000); // Wait for 1 second
+  
+  
+  //1) 5 segundos verde / amarillo rojo
+  //2) 5 segundos rojo / verde amarillo
+  
+  digitalWrite(lv1, HIGH);
+  digitalWrite(lr1, LOW);
+  digitalWrite(la1, LOW);
+  
+  digitalWrite(lr2, HIGH);
+  digitalWrite(la2, LOW);
+  digitalWrite(lv2, LOW);
+  
+  delay(5000); // Wait for 5 seconds
+  
+  //1) 1 segundo amarillo / rojo verde
+  //2) 1 segundo rojo / amarillo verde
+  
+  digitalWrite(la1, HIGH);
+  digitalWrite(lv1, LOW);
+  digitalWrite(lr1, LOW);
+  
+  digitalWrite(lr2, HIGH);
+  digitalWrite(lv2, LOW);
+  digitalWrite(la2, LOW);
+  
+  delay(1000); // Wait for 1 second
+}
