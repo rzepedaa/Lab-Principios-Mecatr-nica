@@ -1,0 +1,40 @@
+#include <Servo.h>
+#include <LiquidCrystal.h>  
+
+Servo myservo;
+float val = 0;
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+float analogPin = A0;
+
+float valA=0;
+float valD=0;
+float grado=0;
+
+void setup() {
+  myservo.attach(9);
+  lcd.begin(16, 2);
+}
+
+void loop() {
+
+  
+  valA = analogRead(analogPin);
+  grado=map(valA,0,1023,0,180);
+  myservo.write(grado);
+  delay(20);
+  valD = map(valA , 0, 1023,0,5);
+  
+  lcd.setCursor(0, 0);
+  lcd.print("Voltaje: ");
+  lcd.setCursor(9, 0);
+  lcd.print(valD);
+  valD = valA*5/1023;
+  lcd.setCursor(2, 1);
+  lcd.print("Grados: ");
+  lcd.setCursor(10, 1);
+  lcd.print(grado);
+  
+  
+  
+  
+}
