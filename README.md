@@ -1,1 +1,1 @@
-# Lab-Principios-Mecatr-nica
+# Lab-Principios-Mecatronica
