@@ -1,0 +1,35 @@
+int analogPin = A0;// potentiometer wiper (middle terminal) connected to analog pin 3
+					// outside leads to ground and +5V
+float val = 0;// variable to store the value read
+float volt = 0;
+
+int led=13;
+
+void setup() {
+  Serial.begin(9600);//  setup serial
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  val = analogRead(analogPin);// read the input pin
+  volt = val*5/1023;
+  
+  // 1) 
+  //Serial.print ("Conversión analógico-digital: ");
+  //Serial.println(val);// debug value
+  
+  Serial.print ("Valor voltaje: ");
+  Serial.println(volt);
+  
+  /** Para hacer el otro ejercicio solo hay que habilitar esta parte del código
+  
+  if (volt>3){
+    digitalWrite(led, HIGH);
+	}
+  else {
+    digitalWrite(led, LOW);
+  }**/
+  
+  analogWrite(led,val/4);
+}
+
