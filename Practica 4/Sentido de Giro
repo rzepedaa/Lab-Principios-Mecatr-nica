@@ -1,0 +1,52 @@
+int enable=13;
+int in1=12;
+int in2=11;
+int b1=7;
+int b2=6;
+int led1=5;
+int led2=4;
+
+
+void setup() {
+  
+  pinMode(enable, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(b1, INPUT);
+  pinMode(b2, INPUT);
+  pinMode(led1, OUTPUT); 
+  pinMode(led2, OUTPUT);
+  
+}
+
+void loop() { 
+  /*
+  digitalWrite(enable, LOW);
+  digitalWrite(in1, LOW);
+  digitalWrite(led1, LOW);
+  digitalWrite(in2, LOW);
+  digitalWrite(led2, LOW);
+  */
+  if (digitalRead(b1) == 0 & digitalRead(b2) == 0){ 
+    digitalWrite(enable, LOW);
+    digitalWrite(in1, LOW);
+    digitalWrite(led1, LOW);
+    digitalWrite(in2, LOW);
+    digitalWrite(led2, LOW);
+    }/*
+    */
+  
+  if (digitalRead(b1) == 1 & digitalRead(b2) == 0 ){ 
+    digitalWrite(enable, HIGH);
+    digitalWrite(in1, HIGH);
+    digitalWrite(led1, HIGH);
+    }
+
+  if (digitalRead(b1) == 0 & digitalRead(b2) == 1){
+    digitalWrite(enable, HIGH);
+    digitalWrite(in2, HIGH);
+    digitalWrite(4, HIGH);
+    }
+  
+                      
+}
