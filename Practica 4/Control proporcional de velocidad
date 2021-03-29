@@ -1,0 +1,30 @@
+int pot= A0;
+int in1=12;
+int in2=11;
+int enable=10;
+float valA=0;
+float valD=0;
+
+void setup() {
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(enable, OUTPUT);
+}
+
+void loop() {
+  
+  valA= analogRead(pot); 
+  valD= abs(map(valA, 0, 1023, -255, 255)); 
+  
+  analogWrite(enable, valD ); 
+  
+  if ( valA < 512 ){ // Giro en sentido horario
+    digitalWrite(in1, HIGH);
+    digitalWrite(in2, LOW);
+  }
+  
+  if (valA > 512){// Giro en sentido anti-horario
+    digitalWrite(in1, LOW);
+    digitalWrite(in2, HIGH);
+  }                           
+}
