@@ -1,0 +1,32 @@
+/*const int sensorPin= A0;
+ 
+void setup()
+{
+  Serial.begin(9600);
+}
+ 
+void loop()
+{
+  int value = analogRead(sensorPin);
+  float millivolts = (value / 1023.0) * 5000;
+  float celsius = millivolts / 10; 
+  Serial.print(celsius);
+  Serial.println(" C");
+  delay(1000);
+}˚*/
+
+const int temp= A0;
+float grados=0;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+ 
+void loop()
+{
+  grados = (analogRead(temp) / 1023.0) * 500; //Rango es de -550mv a 1500mv
+  Serial.print(grados);
+  Serial.println("\n");
+  delay(1000);
+}
