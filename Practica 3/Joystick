@@ -1,0 +1,97 @@
+const float X_pin = 0; // analog pin connected to X output
+const float Y_pin = 1; // analog pin connected to Y output
+float x=0;
+float y=0;
+void setup() {
+  Serial.begin(250000);
+}
+
+void loop() {
+  Serial.print(" ");
+  Serial.print("X-axis: ");    
+  x=map(X_pin, 0, 1023, -1.0, 1.0);
+  x=Serial.println(analogRead(X_pin));
+  Serial.print(" ");
+  Serial.print("Y-axis: ");
+  y=map(Y_pin, 0, 1023, -1.0, 1.0);
+  y=Serial.println(analogRead(Y_pin));
+  Serial.print("\n");
+  Serial.print(cos(x)*sin(y));
+  delay(25);
+}
+/*
+const float X_pin = 0; // analog pin connected to X output
+const float Y_pin = 1; // analog pin connected to Y output
+float x=0;
+float y=0;
+void setup() {
+  Serial.begin(250000);
+}
+
+void loop() {
+  Serial.print(" ");
+  Serial.print("X-axis: ");    
+  x=map(analogRead(X_pin), 0, 1023, -1.0, 1.0);
+  Serial.println(x);
+  Serial.print(" ");
+  Serial.print("Y-axis: ");
+  y=map(analogRead(Y_pin), 0, 1023, -1.0, 1.0);
+  Serial.println(y);
+  Serial.print("cos*sin: ");
+  Serial.print("\n");
+  Serial.print(cos(x)*sin(y));
+  delay(25);
+}
+
+*/
+/*
+const float X_pin = 0; // analog pin connected to X output
+const float Y_pin = 1; // analog pin connected to Y output
+
+float Xdig=0;
+float Ydig=0;
+
+void setup() {
+  Serial.begin(250000);
+}
+
+
+void loop() {
+  
+  Serial.print(" ");
+  Serial.print("Eje X: ");
+  Xdig=map(analogRead(X_pin),0,1023,-1.0,1.0);
+  Serial.print(" ");
+  Serial.print("Eje Y: ");
+  Ydig=map(analogRead(Y_pin),0,1023,-1.0,1.0);
+  Serial.print(cos(Xdig)*sin(Ydig));
+  delay(25);
+  
+  Serial.print("\n");
+}
+
+
+//////////
+const float X_pin = 0; // analog pin connected to X output
+const float Y_pin = 1; // analog pin connected to Y output
+float x=0;
+float y=0;
+void setup() {
+  Serial.begin(250000);
+}
+
+void loop() {
+  Serial.print(" ");
+  Serial.print("X-axis: ");    
+  x=map(X_pin, 0, 1023, -1.0, 1.0);
+  x=Serial.println(analogRead(X_pin));
+  Serial.print(" ");
+  Serial.print("Y-axis: ");
+  y=map(Y_pin, 0, 1023, -1.0, 1.0);
+  y=Serial.println(analogRead(Y_pin));
+  Serial.print("\n");
+  Serial.print(cos(x)*sin(y));
+  delay(25);
+}
+ */
+ 
